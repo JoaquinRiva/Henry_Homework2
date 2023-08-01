@@ -12,28 +12,28 @@ var a = 5;
 var b = 10;
 var c = function (a, b, c) {
    var x = 10;
-   console.log(x);
-   console.log(a);
+   console.log(x); //resultado 10
+   console.log(a); // resultado 8
    var f = function (a, b, c) {
       b = a;
-      console.log(b);
+      console.log(b); //resultado 8
       b = c;
       var x = 5;
    };
    f(a, b, c);
-   console.log(b);
+   console.log(b); // resultado 9
 };
 c(8, 9, 10);
-console.log(b);
-console.log(x);
+console.log(b); //resultado 10
+console.log(x); // resultado 1
 ```
 
 ```javascript
-console.log(bar);
-console.log(baz);
+console.log(bar); //undefined
+console.log(baz); //baz is not defined
 foo();
 function foo() {
-   console.log('Hola!');
+   console.log('Hola!'); //no se convoca
 }
 var bar = 1;
 baz = 2;
@@ -44,19 +44,19 @@ var instructor = 'Tony';
 if (true) {
    var instructor = 'Franco';
 }
-console.log(instructor);
+console.log(instructor); // franco
 ```
 
 ```javascript
 var instructor = 'Tony';
-console.log(instructor);
+console.log(instructor); // tony
 (function () {
    if (true) {
       var instructor = 'Franco';
-      console.log(instructor);
+      console.log(instructor);// franco
    }
 })();
-console.log(instructor);
+console.log(instructor); // tony
 ```
 
 ```javascript
@@ -65,11 +65,11 @@ let pm = 'Franco';
 if (true) {
    var instructor = 'The Flash';
    let pm = 'Reverse Flash';
-   console.log(instructor);
-   console.log(pm);
+   console.log(instructor); // The Flash
+   console.log(pm); // Reverse Flash
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor); //The Flasj
+console.log(pm); //Franco
 ```
 
 ### Coerción de Datos
@@ -77,22 +77,22 @@ console.log(pm);
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3" // divide, resultado = 2
+"2" * "3" // multiplica, resultado = 6
+4 + 5 + "px" // suma y concatena, resultado = 9px
+"$" + 4 + 5 // concatena, resultado = $45
+"4" - 2 // resta, resultado = 2
+"4px" - 2 // Nan
+7 / 0 // resultado infinito
+{}[0] // resultado undefined
+parseInt("09") // resultado 9
+5 && 2 // resultado 2
+2 && 5 //resultado 5
+5 || 0 //resultado 5
+0 || 5 //resultado 5
+[3]+[3]-[10] // 4
+3>2>1 // false
+[] == ![] //true
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -103,8 +103,8 @@ parseInt("09")
 
 ```javascript
 function test() {
-   console.log(a);
-   console.log(foo());
+   console.log(a); //undefined
+   console.log(foo()); // 2
 
    var a = 1;
    function foo() {
@@ -147,11 +147,11 @@ var obj = {
    },
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // aurelio de rosa
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test()); // undefined
 ```
 
 ### Event loop
@@ -160,14 +160,14 @@ Considerando el siguiente código, ¿Cuál sería el orden en el que se muestra 
 
 ```javascript
 function printing() {
-   console.log(1);
+   console.log(1); //primero
    setTimeout(function () {
-      console.log(2);
+      console.log(2);// ultimo
    }, 1000);
    setTimeout(function () {
-      console.log(3);
+      console.log(3); // tercero
    }, 0);
-   console.log(4);
+   console.log(4); //segundo
 }
 
 printing();

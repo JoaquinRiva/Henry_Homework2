@@ -4,7 +4,7 @@ function BinarioADecimal(num) {
    let suma = 0;
 
    for(let i = 0; i < num.length; i++){
-      suma += +num[i] * 2 ** (num.length - 1 - i);
+      suma += +num[i] * 2 ** (num.length - 1 - i); // el -1 es para recorrer el array de atras para adelante
    }
    return suma;
 }

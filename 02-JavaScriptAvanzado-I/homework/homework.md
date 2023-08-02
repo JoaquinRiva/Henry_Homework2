@@ -31,9 +31,9 @@ console.log(x); // resultado 1
 ```javascript
 console.log(bar); //undefined
 console.log(baz); //baz is not defined
-foo();
+foo(); //hola
 function foo() {
-   console.log('Hola!'); //no se convoca
+   console.log('Hola!'); 
 }
 var bar = 1;
 baz = 2;
@@ -90,7 +90,7 @@ parseInt("09") // resultado 9
 2 && 5 //resultado 5
 5 || 0 //resultado 5
 0 || 5 //resultado 5
-[3]+[3]-[10] // 4
+[3]+[3]-[10] // 23
 3>2>1 // false
 [] == ![] //true
 ```

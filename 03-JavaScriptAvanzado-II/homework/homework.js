@@ -56,7 +56,7 @@ otra vez cálculos que ya se hicieron anteriormente.
 
 function cacheFunction(cb) {
   const cache = {};
-
+//se utiliza punto cuando sabemos la propiedad y [] cuando no sabemos
   return function(arg) {
     if(cache.hasOwnProperty(arg)){
       return cache[arg];

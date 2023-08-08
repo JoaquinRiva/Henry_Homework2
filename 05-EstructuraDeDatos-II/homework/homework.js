@@ -11,12 +11,12 @@ Implementar la clase LinkedList, definiendo los siguientes métodos:
   En caso de que la búsqueda no arroje resultados, search debe retornar null.
 */
 function LinkedList() {
-  this._length = 0
+  this._length = 0//Locomotora
   this.head = null
 }
 
 function Node(value) {
-  this.value = value
+  this.value = value//Vagones
   this.next = null
 }
 
